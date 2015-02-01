@@ -28,11 +28,13 @@ function send() {
     io.emit("updatePoopinStats", data)
 }
 
+setInterval(function(){ send(); }, 3000);
+
 io.on('connection', function (socket) {
     console.log("connection");
 
     socket.on('initialConnection', function (data) {
-        setInterval(function(){ send(); }, 3000);
+        //setInterval(function(){ send(); }, 3000);
     });
 });
 
