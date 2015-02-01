@@ -9,16 +9,10 @@
 <script>
     var socket = io.connect('https://rocky-spire-9621.herokuapp.com/');
 
-    socket.emit('xxx', { my: 'data' });
+    socket.emit('initialConnection', { my: 'data' });
 
-    socket.on('news', function (data) {
+    socket.on('updatePoopinStats', function (data) {
         console.log(data);
-        socket.emit('my other event', { my: 'data' });
-    });
-
-    socket.on('news', function (data) {
-        console.log(data);
-        socket.emit('my other event', { my: 'data' });
     });
 </script>
 </body>
