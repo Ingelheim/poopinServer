@@ -91,9 +91,9 @@ io.on('connection', function (socket) {
         registerPooper(data, socket);
     });
 
-    socket.on('disconnect', function (data) {
+    socket.on('disconnecting', function (data) {
         console.log("connection lost");
-        deRegisterPooper({"continent" : "Europe"}, socket)
+        deRegisterPooper(data, socket)
     });
 });
 
