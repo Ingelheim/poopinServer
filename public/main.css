@@ -1,0 +1,80 @@
+* {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+body {
+    background-color: #000052   ;
+}
+
+.logo {
+    font-size: 35px;
+    color: #FCFCFC;
+    margin: 10px 0px 0px 10px;
+
+}
+
+.main-container {
+    margin-top: 25px;
+}
+
+.count {
+    font-size: 130px;
+}
+
+.normal {
+    color: #FCFCFC;
+}
+
+.up {
+    color: #25CD25;
+}
+
+.down {
+    color: red;
+}
+
+.count-sub {
+    font-size: 30px;
+}
+
+.align-center {
+    width: 100%;
+    text-align: center;
+}
+
+.continent-container {
+    background-color: yellow;
+    width: 100%;
+    margin-top: 50px;
+    font-size: 35px;
+}
+
+.continent-name {
+    width: 50%;
+    float: left;
+}
+
+.continent-value {
+    width: 50%;
+    float: left;
+}
+
+.continent {
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 10%;
+}
+
+.value {
+    margin-top: 20px;
+    margin-left: 10%;
+    text-align: left;
+}
+
+.appstore-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    margin-top: 30px;
+}

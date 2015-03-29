@@ -1,19 +1,40 @@
-<!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
+<h1 class="logo">poopin</h1>
+
+<div class="main-container">
+    <div class="count normal align-center" id="total" data-bind="text: total">0</div>
+    <div class="count-sub normal align-center"> people are poopin right now</div>
+    <div class="continent-container">
+        <div class="continent-name">
+            <div class="continent normal">Europe</div>
+            <div class="continent normal">S. America</div>
+            <div class="continent normal">N. America</div>
+            <div class="continent normal">Africa</div>
+            <div class="continent normal">Australia</div>
+            <div class="continent normal">Asia</div>
+        </div>
+        <div class="continent-value">
+            <div class="value normal" id="europe" data-bind="text: europe">0</div>
+            <div class="value normal" id="southAmerica"  data-bind="text: southAmerica">0</div>
+            <div class="value normal" id="northAmerica" data-bind="text: northAmerica">0</div>
+            <div class="value normal" id="africa" data-bind="text: africa">0</div>
+            <div class="value normal" id="australia" data-bind="text: australia">0</div>
+            <div class="value normal" id="asia" data-bind="text: asia">0</div>
+        </div>
+    </div>
+</div>
+<!--<div class="appstore-container">-->
+<!--<object type="image/svg+xml" data="appstore.svg" class="appstore-logo">Your browser does not support SVG</object>-->
+<!--</div>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://cdn.socket.io/socket.io-1.3.2.js"></script>
-<script>
-    var socket = io.connect('https://rocky-spire-9621.herokuapp.com:3000');
-
-    socket.emit('initialConnection', { my: 'data' });
-
-    socket.on('updatePoopinStats', function (data) {
-        console.log(data);
-    });
-</script>
+<script type='text/javascript' src='knockout-3.3.0.js'></script>
+<script type='text/javascript' src='knockout.js'></script>
+<script type='text/javascript' src='socket.js'></script>
 </body>
 </html>

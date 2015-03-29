@@ -26,14 +26,15 @@ var socketsPerContinent = {
     "Australia": []
 };
 
+
+app.use(express.static(__dirname + '/public'));
+
 app.get('/', function (req, res) {
     res.sendfile(__dirname + '/index.html');
 });
 
 function recalculateTotals() {
     _.each(socketsPerContinent, function (value, continent) {
-        //console.log("Value " + value + " for key " + key);
-        //console.log("SOCKETS " + socketsPerContinent);
         currentPoopinCount.continents[continent] = value.length;
     });
 }
@@ -57,8 +58,6 @@ function registerPooper(data, mySocket) {
     var socketUid = mySocket.id;
 
     socketsPerContinent[continent].push(socketUid);
-    console.log(socketsPerContinent[continent])
-    //socketsPerContinent = _.uniq(socketsPerContinent);
 
     recalculateTotals();
     recalculateTotal();
@@ -83,8 +82,12 @@ setInterval(function () {
 }, 3000);
 
 io.on('connection', function (socket) {
-    //var mySocket = socket;
     console.log(socket.id);
+
+    socket.on('webListener', function (data) {
+            console.log("initial connection of webListener");
+//            registerPooper(data, socket);
+        });
 
     socket.on('initialConnection', function (data) {
         console.log("initial connection");
@@ -97,4 +100,6 @@ io.on('connection', function (socket) {
     });
 });
 
+
+console.log("listening onf " + port)
 server.listen(port);
